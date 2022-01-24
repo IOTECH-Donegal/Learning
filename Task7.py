@@ -21,17 +21,14 @@ def rmc_ds(nmea):
         day, month, year = int(rmc[9][:2]), int(rmc[9][2:4]), 2000+int(rmc[9][4:])
         dt = datetime.datetime(year, month, day, hour, minute, second)
 
-
-return latitude, longitude, dt, heading, speed
-
+    return latitude, longitude, dt, heading, speed
 
 
 def distance(lon1, lat1, lon2, lat2):
     lat = (lat1 + lat2) / 2 * math.pi / 180
     dx = 111.3 * math.cos(lat) * (lon1 - lon2)
     dy = 111.3 * (lat1 - lat2)
-    return math.sqrt(dx2 + dy2)
-
+    return math.sqrt(dx + dy)
 
 try:
     with serial.Serial("COM6") as s:
