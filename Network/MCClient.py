@@ -19,7 +19,6 @@ MCAST_IF_IP = settings.MCCLIENT["IP_ADDRESS"]
 while True:
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP) as s:
         s.setsockopt(socket.SOL_IP, socket.IP_MULTICAST_IF, socket.inet_aton(MCAST_IF_IP))
-        #s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 2)
         message_text = f"IOTECH {datetime.now()}"
         message = message_text.encode('utf-8')
         s.sendto(message, (MCAST_GRP, MCAST_PORT))
