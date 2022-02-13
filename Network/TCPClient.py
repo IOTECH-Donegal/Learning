@@ -1,6 +1,8 @@
 import socket
+# Target IP and port
 TCP_IP = '192.168.5.230'
 TCP_PORT = 23
+
 BUFFER_SIZE = 1024
 message = input('Message: ')
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
