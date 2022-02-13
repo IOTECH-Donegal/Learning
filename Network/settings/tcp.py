@@ -1,0 +1,5 @@
+TCP = {
+    "SERVER_TCP_IPv4": '192.168.5.230',
+    "SERVER_PORT": 23
+}
+
