@@ -17,6 +17,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
     s.bind(SERVER_ADDRESS)
     group = socket.inet_aton(MCAST_GRP)
     mreq = struct.pack('4s4s', group, socket.inet_aton(MCAST_IF_IP))
+    print(mreq)
     s.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
 
     while True:
